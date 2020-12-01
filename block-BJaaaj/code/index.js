@@ -20,7 +20,7 @@ const fullName = firstName +" "+ lastName;
 // Declare three variables `name,` `newUser` and `isAdmin`.
 let name , newUser , isAdmin;
 // Assign your name as the value of `name`.
-name=`name`;
+name=`Ayush`;
 // Assign the value of `name` to `newUser`.
 newUser=name;
 // Set the value of `isAdmin` to `true`.
