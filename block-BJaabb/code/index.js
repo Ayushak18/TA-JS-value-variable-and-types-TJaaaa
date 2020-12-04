@@ -67,3 +67,11 @@ Example:
 
 */
 
+let num1 = +prompt("Enter first number");
+let num2 = +prompt("Enter second number");
+
+if(isNaN(num1) || isNaN(num2)){
+    alert(`Enter a valid value`);
+}else{
+    alert(num1 == num2);
+}
