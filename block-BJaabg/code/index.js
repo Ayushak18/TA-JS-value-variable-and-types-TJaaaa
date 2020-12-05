@@ -17,18 +17,20 @@ var amount = 0;
 
 // ⛑ Answer of the above will `$334.76`.
 
-while(bank_balance > 0){
-    if(PHONE_PRICE < SPENDING_THRESHOLD){
-        console.log(`Phone + acc ${PHONE_PRICE + ACCESSORY_PRICE}`);
-        amount = PHONE_PRICE + ACCESSORY_PRICE + (PHONE_PRICE + ACCESSORY_PRICE)*0.08;
-        console.log(`Amount ${amount}`);
-        bank_balance = bank_balance - amount;
-        console.log(`Bank balance ${bank_balance}`);
-    }else{
-        console.log(`Phone ${PHONE_PRICE + ACCESSORY_PRICE}`);
-        amount = PHONE_PRICE + (PHONE_PRICE)*0.08;
-        console.log(`Amount ${amount}`);
-        bank_balance = bank_balance - amount;
-        console.log(`Bank balance ${bank_balance}`);
+while(amount < bank_balance){
+    amount = amount + PHONE_PRICE;
+    if(amount < SPENDING_THRESHOLD){
+        amount = amount + ACCESSORY_PRICE;
     }
+}
+
+let tax =amount * TAX_RATE;
+
+amount = amount +tax;
+console.log(`Total amount of this purchase is ${amount}`);
+
+if(amount < bank_balance){
+    console.log(`You can afford it`);
+}else{
+    console.log(`You can't afford it`);
 }
